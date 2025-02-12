@@ -1,7 +1,11 @@
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 openai = OpenAI(
-    api_key="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"
+    api_key=os.getenv("OPENAI_API_SECRET_KEY")
 )
 
 response = openai.images.generate(
